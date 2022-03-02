@@ -8,7 +8,7 @@ from pymisp import ExpandedPyMISP, MISPEvent
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 misp_url=os.getenv('MISP_URL')
-misp_key=open ('/run/secrets/misp_key').read()
+misp_key=open('/run/secrets/misp_key').read()
 misp_verifycert=os.getenv('MISP_VERIFYCERT')
 proofpoint_sp=os.getenv('PROOFPOINT_SP')
 proofpoint_secret=open('/run/secrets/proofpoint_key').read()
