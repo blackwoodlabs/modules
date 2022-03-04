@@ -31,6 +31,7 @@ queryString = {
 }
 
 responseSiem = requests.request("GET", urlSiem,  params=queryString, auth=HTTPBasicAuth(proofpoint_sp, proofpoint_secret))
+print(responseSiem)
 if 'Credentials authentication failed' in responseSiem.text:
     print('Credentials invalid, please edit keys.py and try again')
     quit()
