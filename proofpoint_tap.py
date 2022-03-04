@@ -1,8 +1,10 @@
+
 import os
 import requests
 import urllib3
 import json
 from requests.auth import HTTPBasicAuth
+import pymisp
 from pymisp import ExpandedPyMISP, MISPEvent
 import logging
 
