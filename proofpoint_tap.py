@@ -18,7 +18,7 @@ proofpoint_secret=open('/run/secrets/proofpoint_key').read()
 #     quit()
 
 # initialize PyMISP and set url for Panorama
-misp = ExpandedPyMISP(url=misp_url, key=misp_key, ssl=misp_verifycert)
+misp = ExpandedPyMISP(debug=True, url=misp_url, key=misp_key, ssl=misp_verifycert)
 
 urlSiem = "https://tap-api-v2.proofpoint.com/v2/siem/all"
 
