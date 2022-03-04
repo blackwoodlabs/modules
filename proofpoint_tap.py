@@ -42,6 +42,7 @@ for alert in alertType:
         # initialize and set MISPEvent()
         event = MISPEvent()
         if alert == "messagesDelivered" or alert == "messagesBlocked":
+            print(alert)
             if alert == "messagesDelivered":
                 event.info = alert
                 event.distribution = 0  # Optional, defaults to MISP.default_event_distribution in MISP config
