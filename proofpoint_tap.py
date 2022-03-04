@@ -4,6 +4,10 @@ import urllib3
 import json
 from requests.auth import HTTPBasicAuth
 from pymisp import ExpandedPyMISP, MISPEvent
+import logging
+
+logger = logging.getLogger('pymisp')
+logging.basicConfig(level=logging.DEBUG, filename="debug.log", filemode='w', format=pymisp.FORMAT)
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -18,7 +22,7 @@ proofpoint_secret=open('/run/secrets/proofpoint_key').read()
 #     quit()
 
 # initialize PyMISP and set url for Panorama
-misp = ExpandedPyMISP(debug=True, url=misp_url, key=misp_key, ssl=misp_verifycert)
+misp = ExpandedPyMISP(url=misp_url, key=misp_key, ssl=misp_verifycert)
 
 urlSiem = "https://tap-api-v2.proofpoint.com/v2/siem/all"
 
