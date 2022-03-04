@@ -41,8 +41,9 @@ for alert in alertType:
     for messages in jsonDataSiem[alert]:
         # initialize and set MISPEvent()
         event = MISPEvent()
+        print("1. " + alert)
         if alert == "messagesDelivered" or alert == "messagesBlocked":
-            print(alert)
+            print("2. " + alert)
             if alert == "messagesDelivered":
                 event.info = alert
                 event.distribution = 0  # Optional, defaults to MISP.default_event_distribution in MISP config
@@ -159,8 +160,8 @@ for alert in alertType:
             misp.add_event(event.to_json())
 
         if alert == "clicksPermitted" or alert == "clicksBlocked":
+            print("3. " + alert)
             if alert == "clicksPermitted":
-                print(alert + " is a permitted click")
                 event.info = alert
                 event.distribution = 0  # Optional, defaults to MISP.default_event_distribution in MISP config
                 event.threat_level_id = 2  # setting this to 0 breaks the integration
