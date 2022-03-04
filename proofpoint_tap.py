@@ -208,4 +208,4 @@ for alert in alertType:
 
             userAgent = event.add_attribute('user-agent', messages["userAgent"])
 
-            misp.add_event(event.to_json())
+            print(misp.add_event(event.to_json()))
